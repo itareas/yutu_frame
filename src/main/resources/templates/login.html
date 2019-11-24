@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>宇图框架</title>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	</head>
+	<body>
+		<div class="login">
+			<div id="logincont">
+				<div id="logo">
+					<!--<span>宇图框架</span>-->
+				</div>
+				<p class="loginTitle">用户登录</p>
+				<div>
+					<input class="yhm" id="yhm" type="text"  placeholder="用户名" value="admin"/>
+					<input class="yhm" id="pass" type="password" placeholder="密码"  value="admin"/>
+				</div>
+				<div class="jzmm">
+					<div>
+						<input type="checkbox" id="jz"/>记住密码
+					</div>
+					<span id="">忘记密码</span>
+				</div>
+				<button id="btn">登录</button>
+			</div>
+		</div>
+	</body>
+	<script src="plugin/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//回车提交事件
+			$("#pass").keydown(function(event) {
+				if (event.keyCode == "13") {//keyCode=13是回车键
+					$('#btn').click();
+				}
+			});
+		})
+
+		$("#btn").click(function(){
+			var yhm = $("#yhm").val();
+			var pass = $("#pass").val();
+			$.ajax({
+				url: '../login/getLoginVerification',
+				type: 'POST',
+				async: false,
+				data:{userName:yhm,userPwd:pass},
+				dataType: "JSON",
+				success: function (data) {
+					 if(data.status==1){
+						 window.location.href = "./index";
+					 }else {
+						 alert("账号或密码错误");
+					 }
+
+				},
+				error: function (error) {
+					console.log(error);
+				}
+			});
+
+		})
+	</script>
+</html>

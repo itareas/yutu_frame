@@ -1,0 +1,111 @@
+#开发环境配置
+#==========================================
+
+#端口配置
+server.port=8095
+
+#拦截器 是否启用 和超时时间（毫秒）
+System.Interceptor.StartUp=false
+System.Interceptor.OverTime=3000
+
+# 黑名单机制是否启动
+System.Blacklist.StartUp=true
+System.Blacklist.MaxNumber=60
+
+# Xss和Sql预防注入机制是否启动
+System.XssAndSql.StartUp=true
+
+#白名单 错误提示
+System.Filter.Path=/,/login/getLoginVerification,/redirect
+System.Home.Page=/index
+System.Login.Page=/
+
+#多数据源配置
+# mysql  主
+spring.datasource.mysql.driverClassName = com.mysql.cj.jdbc.Driver
+spring.datasource.mysql.url = jdbc:mysql://localhost:3306/yutuframe?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+spring.datasource.mysql.username = root
+spring.datasource.mysql.password = root
+# 数据连接池其他配置  数据库连接池最大连接数=服务器核心数*2+1
+spring.datasource.mysql.initialSize=5
+spring.datasource.mysql.minIdle=5
+spring.datasource.mysql.maxActive=20
+# 配置获取连接等待超时的时间
+spring.datasource.mysql.maxWait=60000
+#配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+spring.datasource.mysql.timeBetweenEvictionRunsMillis=60000
+# 配置一个连接在池中最小生存的时间，单位是毫秒
+spring.datasource.mysql.minEvictableIdleTimeMillis=300000
+spring.datasource.mysql.validationQuery=SELECT 1 FROM DUAL
+spring.datasource.mysql.testWhileIdle=true
+spring.datasource.mysql.testOnBorrow=false
+spring.datasource.mysql.testOnReturn=false
+# 打开PSCache，并且指定每个连接上PSCache的大小
+spring.datasource.mysql.poolPreparedStatements=true
+spring.datasource.mysql.maxPoolPreparedStatementPerConnectionSize=20
+# 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+spring.datasource.mysql.filters=stat,wall,log4j
+# 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+spring.datasource.mysql.connectionProperties=druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+# sqlServer  从
+spring.datasource.sqlserver.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.datasource.sqlserver.url=jdbc:sqlserver://127.0.0.1:1433;DatabaseName=EnvBAR_DB
+spring.datasource.sqlserver.username=zbc
+spring.datasource.sqlserver.password=yutu@zbc
+# 数据连接池其他配置  数据库连接池最大连接数=服务器核心数*2+1
+spring.datasource.sqlserver.initialSize=5
+spring.datasource.sqlserver.minIdle=5
+spring.datasource.sqlserver.maxActive=20
+# 配置获取连接等待超时的时间
+spring.datasource.sqlserver.maxWait=60000
+#配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+spring.datasource.sqlserver.timeBetweenEvictionRunsMillis=60000
+# 配置一个连接在池中最小生存的时间，单位是毫秒
+spring.datasource.sqlserver.minEvictableIdleTimeMillis=300000
+spring.datasource.sqlserver.validationQuery=SELECT 1 
+spring.datasource.sqlserver.testWhileIdle=true
+spring.datasource.sqlserver.testOnBorrow=false
+spring.datasource.sqlserver.testOnReturn=false
+# 打开PSCache，并且指定每个连接上PSCache的大小
+spring.datasource.sqlserver.poolPreparedStatements=true
+spring.datasource.sqlserver.maxPoolPreparedStatementPerConnectionSize=20
+# 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+spring.datasource.sqlserver.filters=stat,wall,log4j
+# 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+spring.datasource.sqlserver.connectionProperties=druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+# oracle   从
+spring.datasource.oracle.driverClassName=oracle.jdbc.OracleDriver
+spring.datasource.oracle.url=jdbc:oracle:thin:@127.0.0.1:1521:ORCL
+spring.datasource.oracle.username=REPORTSXYD
+spring.datasource.oracle.password=REPORTSXYD
+# 数据连接池其他配置 数据库连接池最大连接数=服务器核心数*2+1
+spring.datasource.oracle.initialSize=5
+spring.datasource.oracle.minIdle=5
+spring.datasource.oracle.maxActive=20
+# 配置获取连接等待超时的时间
+spring.datasource.oracle.maxWait=60000
+#配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+spring.datasource.oracle.timeBetweenEvictionRunsMillis=60000
+# 配置一个连接在池中最小生存的时间，单位是毫秒
+spring.datasource.oracle.minEvictableIdleTimeMillis=300000
+spring.datasource.oracle.validationQuery=SELECT 1 FROM DUAL
+spring.datasource.oracle.testWhileIdle=true
+spring.datasource.oracle.testOnBorrow=false
+spring.datasource.oracle.testOnReturn=false
+# 打开PSCache，并且指定每个连接上PSCache的大小
+spring.datasource.oracle.poolPreparedStatements=true
+spring.datasource.oracle.maxPoolPreparedStatementPerConnectionSize=20
+# 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+spring.datasource.oracle.filters=stat,wall,log4j
+# 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+spring.datasource.oracle.connectionProperties=druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+#redis连接
+System.Redis.Host=127.0.0.1
+#redis的默认端口
+System.Redis.Port=6379
+#redis密码
+System.Redis.PassWord=1qaz2wsx
+

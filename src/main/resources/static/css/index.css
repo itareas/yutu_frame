@@ -1,0 +1,284 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+img{
+	vertical-align:text-bottom;
+}
+ul li {
+	list-style: none;
+	margin: 0;
+}
+
+/* 左侧菜单栏 */
+.leftCont{
+	width: 210px;
+	height: 100%;
+	background: #fff;
+	box-shadow: 1px 0 0 0 #e5e5e5;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow-y:auto;
+	/* display: none; */
+	cursor:pointer;
+
+}
+.top{
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid #f2f2f2;
+	padding-bottom: 10px;
+}
+.top img{
+	width: 38px;
+	height: 40px;
+	margin: 14px 0;
+
+}
+.top p{
+	width: 162px;
+	/* color: #333333; */
+	line-height: 36px;
+	/* fonts-family: ; */
+	font-size: 18px;
+	margin-left: 25px;
+	font-weight: 600;
+	text-indent: 2px;
+
+}
+/* 登录名 */
+.loginShow{
+	width: 100%;
+	text-align: center;
+	height: 72px;
+	border-bottom: 1px solid #f2f2f2;
+	line-height: 72px;
+}
+.loginShow img{
+	width: 40px;
+	height: 40px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+.animaimg {
+	/* margin-right: 10px; */
+}
+/* 概览 */
+.GaiLan{
+	width: 100%;
+	height: 62px;
+	border-bottom: 1px solid #f2f2f2;
+	line-height: 62px;
+}
+.GaiLan img{
+	width: 24px;
+	height: 24px;
+	margin: 19px 12px 0px 26px;
+}
+.GaiLan span{
+	font-size: 14px;
+	line-height: 62px;
+	font-weight: 500;
+	display: inline-block;
+}
+
+/* 菜单栏 */
+
+#menuList{
+	/* width: 100%; */
+	height: 264px;
+	border-bottom: 1px solid #f2f2f2;
+
+}
+#menuList .title{
+	margin: 18px 0 18px 24px;
+	line-height: 27px;
+	color: #dadada;
+}
+.list li{
+	/* width: 100%; */
+	height: 73px;
+
+	line-height: 73px;
+
+}
+/* .list li.active{
+	background: ;
+} */
+.list li:hover{
+	background: #f5f6fa;
+}
+.list li img{
+	/* width: 28px;
+	height: 24px; */
+	margin-left: 24px;
+	margin-right: 16px;
+	margin-top: 23px;
+}
+.list li span {
+	font-size: 14px;
+}
+.list .selectActive{
+	color: #5f74fc;
+	border-left: 4px solid #5f74fc;
+	background: #f5f6fa;
+}
+#QiTa{
+	width: 100%;
+	position: relative;
+}
+.level1>div{
+	/* width: 100%; */
+	height: 67px;
+
+	line-height: 67px;
+}
+.level1>div:hover, .level2 li>div:hover, .level3 li:hover{
+	background: #f5f6fa;
+}
+.level1>div img{
+	/* width: 28px; */
+	margin-right: 16px;
+	margin-top: 20px;
+	margin-left: 24px;
+	/* height: 24px; */
+}
+/* 小箭头 */
+.level1 div{
+	position: relative;
+}
+.level1 li{
+	position: relative;
+}
+.level1 i{
+	display: inline-block;
+	width: 7px;
+	height: 5px;
+	background: url(../img/7.png);
+	position: absolute;
+	right: 24px;
+	top: 30px;
+}
+.level1 i.down{
+	background: url(../img/7.png);
+}
+.level3 i{
+	top: 40px;
+}
+/* 二级菜单 */
+.level2{
+	display: none;
+}
+.level2 li>div{
+	height: 67px;
+	font-size: 14px;
+	line-height: 67px;
+}
+.level2 li>div span{
+	width: 100px;
+	display: inline-block;
+}
+.level2 li>div img{
+	/* width: 18px; */
+	margin-right: 16px;
+	margin-left: 40px;
+	margin-top: 20px;
+	/* height: 16px; */
+}
+/* 三级菜单 */
+.level3 {
+	display: none;
+	font-size: 14px;
+}
+.level3 li{
+	/* width: 100%; */
+	height: 90px;
+	line-height: 90px;
+}
+.level3 li img{
+	/* width: 55px; */
+	/* height: 55px; */
+	margin-left: 16px;
+	margin-top: 18px;
+}
+.level3 li p{
+	display: inline-block;
+	width: 86px;
+	height: 90px;
+	/* line-height: ; */
+}
+.level3 li span{
+	display: inline-block;
+	width: 86px;
+	/* height: 90px; */
+	line-height: 16px;
+}
+
+/* 选中状态 */
+.level3 li.active{
+	color: #5f74fc;
+	border-left: 4px solid #5f74fc;
+	background: #f5f6fa;
+
+}
+.level3 li.active img{
+	margin-left: 8px;
+}
+
+/* 菜单弹窗 */
+/* #menuJump{
+	width:486px;
+	height:100%;
+	background: #F5F6FA;
+	position: absolute;
+	top: 0;
+	left: 210px;
+} */
+
+/* 地图部分 */
+#mumap{
+	position: absolute;
+	top: 0;
+	left: 210px;
+	/* display: none; */
+}
+
+/*菜单的行间距*/
+.menuList-title{
+	line-height: 20px;
+	/*display: inline-block;*/
+	/*vertical-align: text-top;*/
+}
+
+
+/* 四级联动遮罩层 */
+#zhezhao{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,.5);
+	z-index: 100;
+	display: none;
+}
+/* 更换产品种类 */
+#changeCont{
+	width: 960px;
+	height: 712px;
+	position: absolute;
+	top: 100px;
+	right: 470px;
+	background: #fff;
+	z-index: 800;
+	/* display: none; */
+}

@@ -1,0 +1,23 @@
+# 系统核心配置类  配置通用的spring配置
+#==========================================
+
+# 选择系统配置文件  dev:开发阶段    prod：生产阶段   test:测试阶段
+spring.profiles.active=dev
+
+# thymelea模板配置
+spring.thymeleaf.mode=LEGACYHTML5
+spring.thymeleaf.encoding=UTF-8
+spring.thymeleaf.servlet.content-type=text/html
+#开发时关闭缓存,不然没法看到实时页面
+spring.thymeleaf.cache=false
+
+# 时间戳统一转换
+spring.jackson.date-format=yyyy-MM-dd HH:mm:ss
+spring.jackson.time-zone=GMT+8
+
+# mybatis 配置
+mybatis.config-location=classpath:mybatis-config.xml
+mybatis.mapper-locations=classpath:com/yutu/mapper/**/*.xml
+
+# post请求长度设置
+server.maxHttpHeaderSize =102400
